@@ -8,7 +8,11 @@ const Home = () => {
         {id: 2, title: "Second movie"}
 
     ]
-    const handleSearch = () => {};
+    const handleSearch = (e) => {
+      e.preventDefault()
+      setSearch('')
+    };
+
   return (
     <div className="">
         <form onSubmit={handleSearch} className="">
@@ -22,9 +26,10 @@ const Home = () => {
           </button>
         </form>
        <div>
-        {movies.map(movie => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+       {movies
+          .filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()))
+          .map(movie => <MovieCard key={movie.id} movie={movie} />)
+        }
         </div>
     </div>
   )
