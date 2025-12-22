@@ -1,13 +1,32 @@
 import MovieCard from "../components/MovieCard"
-import { useState } from "react"
-
+import { useState, useEffect} from "react"
+import { fetchMovie,fetchMovies } from "../services/api"
 const Home = () => {
     const [search, setSearch] = useState("")
-    const movies = [
-        {id: 1, title: "First movie"},
-        {id: 2, title: "Second movie"}
+    const [movies, setMovies] = useState([])
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
 
-    ]
+    useEffect(() => {
+  const getMovies = async () => {
+    try {
+      const moviesData = await fetchMovies();
+      const moviesWithId = moviesData.map((movie, index) => ({
+        id: index,
+        title: movie.Title,
+        year: movie.Year,
+        poster: movie.Poster,
+        imdbID: movie.imdbID
+      }));
+      setMovies(moviesWithId);
+    } catch(err) {
+      setError("Failed to fetch movies");
+    } finally {
+      setLoading(false);
+    }
+  };
+  getMovies();
+}, [])
     const handleSearch = (e) => {
       e.preventDefault()
       setSearch('')
