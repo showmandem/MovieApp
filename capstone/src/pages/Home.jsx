@@ -14,22 +14,29 @@ const Home = () => {
     };
 
   return (
-    <div className="">
-        <form onSubmit={handleSearch} className="">
-          <input type="text" 
-          placeholder="Search for your favourite movie"
-          className=""
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}/>
-          <button type="submit" className="">
-            Search
-          </button>
-        </form>
-       <div>
-       {movies
-          .filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()))
-          .map(movie => <MovieCard key={movie.id} movie={movie} />)
-        }
+    <div className="home-wrapper">
+        <div className="home-container">
+          <form onSubmit={handleSearch} className="search-form">
+            <input type="text" 
+            placeholder="Search for your favourite movie"
+            className="search-input"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}/>
+            <button type="submit" className="search-button">
+              Search
+            </button>
+          </form>
+          <div className="movies-grid">
+            {movies
+              .filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()))
+              .map(movie => <MovieCard key={movie.id} movie={movie} />)
+            }
+          </div>
+          {movies.filter(movie => movie.title.toLowerCase().includes(search.toLowerCase())).length === 0 && (
+            <div className="empty-state">
+              No movies found
+            </div>
+          )}
         </div>
     </div>
   )
