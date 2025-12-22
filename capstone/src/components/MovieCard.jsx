@@ -5,7 +5,7 @@ const MovieCard = ({movie}) => {
   return (
     <div className='movie-card'>
       <div className='movie-image-container'>
-        <img src="" alt="" className='movie-image' />
+        <img src={movie.poster} alt={movie.title} className='movie-image' />
         <div className='movie-overlay'>
             <button className='favorite-button' onClick={onFavClick}>
                 🤍
