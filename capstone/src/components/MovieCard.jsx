@@ -1,6 +1,14 @@
+import { useMovieContext } from "../contexts/Context"
 const MovieCard = ({movie}) => {
-   function onFavClick(){
-    
+  const {addToFavourites, removeFromFavourites, isFavourite} = useMovieContext();
+  const favoured = isFavourite(movie.id);
+   function onFavClick(e){
+    e.preventDefault();
+    if(favoured){
+        removeFromFavourites(movie.id);
+    } else {
+        addToFavourites(movie);
+    }
    }
   return (
     <div className='movie-card'>

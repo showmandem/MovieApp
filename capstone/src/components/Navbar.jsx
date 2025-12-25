@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-content">
-          <Link to='/' className="navbar-brand">🎬 Movie App</Link>
+          <Link to='/' className="navbar-brand">Movie App</Link>
           <div className="navbar-links">
             <Link to='/' className="navbar-link">Home</Link>
             <Link to='/favourites' className="navbar-link">Favourite</Link>

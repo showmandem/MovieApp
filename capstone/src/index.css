@@ -175,13 +175,15 @@ body {
 .movie-card:hover .movie-overlay {
   opacity: 1;
 }
-
 .favorite-button {
-  font-size: 3rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: transform 0.3s;
   background: none;
   border: none;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
 }
 
 .favorite-button:hover {

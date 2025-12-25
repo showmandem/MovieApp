@@ -1,4 +1,13 @@
+import { useMovieContext } from "../contexts/Context"
+
 const Favourite = () => {
+  const { favourites } = useMovieContext();
+  if (favourites)
+    return <div className="movies-grid">
+                    {favourites.map(movie => (
+                        <MovieCard key={movie.id} movie={movie} />
+                    ))}
+                </div>
   return (
     <div className="favourite-container">
       <div className="favourite-empty-state">
