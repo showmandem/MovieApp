@@ -2,21 +2,26 @@ import { useMovieContext } from "../contexts/Context"
 const MovieCard = ({movie}) => {
   const {addToFavourites, removeFromFavourites, isFavourite} = useMovieContext();
   const favoured = isFavourite(movie.id);
-   function onFavClick(e){
+  function onFavClick(e){
     e.preventDefault();
     if(favoured){
-        removeFromFavourites(movie.id);
+      removeFromFavourites(movie.id);
     } else {
-        addToFavourites(movie);
+      addToFavourites(movie);
     }
-   }
+  }
   return (
     <div className='movie-card'>
       <div className='movie-image-container'>
         <img src={movie.poster} alt={movie.title} className='movie-image' />
         <div className='movie-overlay'>
-            <button className='favorite-button' onClick={onFavClick}>
-                🤍
+            <button
+              className={`favorite-button ${favoured ? 'is-favourite' : ''}`}
+              onClick={onFavClick}
+              aria-pressed={favoured}
+              aria-label={favoured ? 'Remove from favourites' : 'Add to favourites'}
+            >
+              {favoured ? '❤️' : '🤍'}
             </button>
             
         </div>
