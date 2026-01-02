@@ -1,7 +1,7 @@
 
 🎥 Capstone Project Plan: (Movie App)
 🎯 Project Idea
-To build a fully responsive web application using React that allows users to search for movies by the The Movie Database (TMDB) API and track them across three personal watchlists (Watchlist, Watching, Finished) using Zustand for state management and localStorage for simple persistence.
+To build a fully responsive web application using React that allows users to search for movies by the OMBD API and track them across three personal watchlists (Watchlist, Watching, Finished) using Zustand for state management and localStorage for simple persistence.
 🛠️ Main Features
 Search Functionality: Users can search for movies or TV shows by keyword (title).
 Watchlist: Users can add movies they plan to watch to this section.
