@@ -13,7 +13,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-  background: linear-gradient(to right, #9333ea, #2563eb);
+  background: linear-gradient(to right, #99989b, #6f7175);
   
   padding: 1rem 2rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,9 @@ body {
 
 .navbar-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
   gap: 1rem;
   align-items: flex-start;
 }
@@ -81,6 +83,7 @@ body {
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 2rem;
+  
 }
 
 .search-input {
@@ -90,6 +93,8 @@ body {
   border: 1px solid #374151;
   color: white;
   font-size: 1rem;
+
+  width: 100%;
 }
 
 .search-input:focus {
@@ -110,7 +115,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 100%;
+
 }
 
 .search-button:hover {
@@ -239,10 +244,10 @@ body {
   text-align: center;
 }
 
-.favourite-emoji {
+/* .favourite-emoji {
   font-size: 3.75rem;
   margin-bottom: 1rem;
-}
+} */
 
 .favourite-title {
   font-size: 1.875rem;
@@ -253,6 +258,9 @@ body {
 .favourite-text {
   color: #9ca3af;
   font-size: 1.125rem;
+}
+.movies-grid{
+  padding: 1rem;
 }
 
 /* Responsive Design - Mobile First */
