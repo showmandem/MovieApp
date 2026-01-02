@@ -1,6 +1,3 @@
-That is an excellent, detailed plan for a Capstone Project! The "Bookworm Buddy" plan is highly structured, uses modern tools (Zustand, Tailwind CSS), and covers every phase from setup to deployment.
-Since you've decided to create a Movie App, I will adapt the structure and detail of the "Bookworm Buddy" plan to fit a movie-centric application, while keeping the core functionality (search, tracking to different lists) the same.
-Here is the highly structured plan for your Capstone Project: "CineTracker" (or whatever you choose to name your Movie App).
 
 🎥 Capstone Project Plan: (Movie App)
 🎯 Project Idea
@@ -8,13 +5,12 @@ To build a fully responsive web application using React that allows users to sea
 🛠️ Main Features
 Search Functionality: Users can search for movies or TV shows by keyword (title).
 Watchlist: Users can add movies they plan to watch to this section.
-Watching: Users can add movies they are currently watching or recently started.
 Finished: Users can add movies/shows they have completed.
 Local Persistence: Use LocalStorage (via Zustand middleware) to save the user's lists and activity across sessions.
 Responsive Design: Fully styled using Tailwind CSS for excellent mobile and desktop viewing.
 🔌 API Selection
-API Choice: The Movie Database (TMDB) API
-Key Information: Movie/Show title, poster image, release date, brief overview, and TMDB ID for tracking.
+API Choice: 0MDB API
+Key Information: Movie/Show title, poster image, release date, brief overview, and 0MDB ID for tracking.
 Action Plan: Use the Search Movies endpoint for discovery and the Get Details endpoint if needed (though the search result data should suffice for the initial MVP). Requires signing up for a free developer API key.
 ⚛️ React Component Structure
 Component Name
@@ -22,10 +18,8 @@ Purpose
 Data Source
 App.jsx
 Main container, handles routing and component rendering.
-N/A
 Header.jsx
 Displays app title and main navigation links/tabs.
-N/A
 SearchInput.jsx
 Handles user input for movie search.
 Local state / useMovieStore action
@@ -92,7 +86,6 @@ Adding a Movie to a List
 [ ] Pass this action as a prop to the MovieCard components in the search results.
 [ ] Implement logic in the action to ensure a movie is added only once (check by ID).
 Rendering Watch Lists
-[ ] Connect WatchLists.jsx to the store to access myWatchList.
 [ ] Create and render three instances of ListSection.jsx, passing a filtered subset of myWatchList (e.g., movies where status === 'Watchlist').
 Phase 5: Interaction and Final Polish
 Goal: Implement status change and removal logic, and finalize the professional appearance.
