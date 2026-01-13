@@ -12,8 +12,8 @@ export const fetchMovie = async (searchTerm) => {
     return data.Search;
 };
 
-export const fetchMovieDetails = async (imdbID) => {
-    const response = await fetch(`${BASE_URL}?apikey=${API_KEY}&i=${imdbID}&plot=full`);
+export const fetchMovieDetails = async (omdbID) => {
+    const response = await fetch(`${BASE_URL}?apikey=${API_KEY}&i=${omdbID}&plot=full`);
     const data = await response.json();
     return data;
 };
